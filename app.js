@@ -15,7 +15,15 @@ UI.prototype.addBookToList = function(book){
    const list = document.getElementById('book-list');
    //create tr element
    const row = document.createElement('tr');
-}
+  //insert cols
+row.innerHTML = `<td> ${book.title} </td>
+                <td> ${book.author} </td>
+                <td> ${book.isbn} </td>
+                <td> ${book.title} </td>
+                <td> <a href="#" class="delete">X<a></td>`;
+                list.appendChild(row);
+console.log(row)
+            }
 
 //event listeners
 document.getElementById('book-form').addEventListener('submit', 
