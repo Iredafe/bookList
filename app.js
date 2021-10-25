@@ -22,9 +22,18 @@ row.innerHTML = `<td> ${book.title} </td>
                 <td> ${book.title} </td>
                 <td> <a href="#" class="delete">X<a></td>`;
                 list.appendChild(row);
+             
 console.log(row)
             }
-
+                  
+            
+    //clear fields
+    UI.prototype.clearFields= function(){
+        document.getElementById('title').value='';
+        document.getElementById('author').value='';
+        document.getElementById('isbn').value='';
+        
+    }
 //event listeners
 document.getElementById('book-form').addEventListener('submit', 
 function(e){
@@ -41,7 +50,10 @@ function(e){
 
     //add book to list
     ui.addBookToList(book);
-    console.log(ui)
+    
+   //clear fields
+   ui.clearFields();
+
     e.preventDefault();
 });
 
