@@ -12,7 +12,9 @@ function UI(){
 }
 
 UI.prototype.addBookToList = function(book){
-    console.log(book);
+   const list = document.getElementById('book-list');
+   //create tr element
+   const row = document.createElement('tr');
 }
 
 //event listeners
@@ -31,6 +33,7 @@ function(e){
 
     //add book to list
     ui.addBookToList(book);
+    console.log(ui)
     e.preventDefault();
 });
 
