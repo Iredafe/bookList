@@ -11,6 +11,9 @@ function UI(){
 
 }
 
+UI.prototype.addBookToList = function(book){
+    console.log(book);
+}
 
 //event listeners
 document.getElementById('book-form').addEventListener('submit', 
@@ -22,7 +25,12 @@ function(e){
     
     //instantiate book
     const book = new Book(title,author, isbn);
-    console.log(book)
+
+    //instantiate ui
+    const ui = new UI();
+
+    //add book to list
+    ui.addBookToList(book);
     e.preventDefault();
 });
 
