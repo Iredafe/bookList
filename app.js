@@ -7,3 +7,20 @@ function book(title, author, isbn){
 
 
 //ui constructor
+function UI(){
+
+}
+
+
+//event listeners
+document.getElementById('book-form').addEventListener('submit', 
+function(e){
+
+    const title = document.getElementById('title').value,
+    author =document.getElementById('author'); 
+    console.log(
+
+    )
+    e.preventDefault();
+});
+
