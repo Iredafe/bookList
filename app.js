@@ -31,6 +31,13 @@ console.log(row)
         document.getElementById('author').value='';
         document.getElementById('isbn').value='';
     }
+
+// create and display alert
+    UI.prototype.showAlert = function(message, className){
+        //create div
+    }
+
+
 //event listeners
 document.getElementById('book-form').addEventListener('submit', 
 function(e){
@@ -46,15 +53,15 @@ function(e){
 
     //validate
     if(title==='' || author ==='' || isbn===''){
-        alert('Failed');
-    }
+        ui.showAlert();
+    }else{
 
     //add book to list
     ui.addBookToList(book);
     
    //clear fields
    ui.clearFields();
-
+    }
     e.preventDefault();
 });
 
