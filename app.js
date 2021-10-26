@@ -42,13 +42,18 @@ console.log(row)
         //add text
         div.appendChild(document.createTextNode(message));
         //get parent
-        const container = document.querySelector('container');
+        const container = document.querySelector('.container');
         //get form
         const form = document.querySelector('#book-form');
+        //insert error label
+        console.log(form)
+        container.insertBefore(div, form);
+        console.log(container);
         //timeout 
         setTimeout(function(){
-            document.querySelector('alert').remove, 3000
-        })
+            document.querySelector('.alert').remove();
+        }, 3000
+        );
     }
 
 
@@ -67,7 +72,7 @@ function(e){
 
     //validate
     if(title==='' || author ==='' || isbn===''){
-        ui.showAlert();
+        ui.showAlert('Please show all fields', 'error');
     }else{
 
     //add book to list
