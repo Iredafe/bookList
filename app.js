@@ -22,17 +22,14 @@ row.innerHTML = `<td> ${book.title} </td>
                 <td> ${book.title} </td>
                 <td> <a href="#" class="delete">X<a></td>`;
                 list.appendChild(row);
-             
 console.log(row)
             }
-                  
-            
+
     //clear fields
     UI.prototype.clearFields= function(){
         document.getElementById('title').value='';
         document.getElementById('author').value='';
         document.getElementById('isbn').value='';
-        
     }
 //event listeners
 document.getElementById('book-form').addEventListener('submit', 
@@ -41,12 +38,16 @@ function(e){
     const title = document.getElementById('title').value,
     author =document.getElementById('author').value,
     isbn=document.getElementById('isbn').value;
-    
     //instantiate book
     const book = new Book(title,author, isbn);
 
     //instantiate ui
     const ui = new UI();
+
+    //validate
+    if(title==='' || author ==='' || isbn===''){
+        alert('Failed');
+    }
 
     //add book to list
     ui.addBookToList(book);
