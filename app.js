@@ -46,16 +46,13 @@ console.log(row)
         //get form
         const form = document.querySelector('#book-form');
         //insert error label
-        console.log(form)
         container.insertBefore(div, form);
-        console.log(container);
         //timeout 
         setTimeout(function(){
             document.querySelector('.alert').remove();
         }, 3000
         );
     }
-
 
 //event listeners
 document.getElementById('book-form').addEventListener('submit', 
@@ -76,7 +73,7 @@ function(e){
     }else{
 
         //success
-        UI.showAlert('Book Added!', 'success')
+    ui.showAlert('Book Added!', 'success')
     //add book to list
     ui.addBookToList(book);
     
