@@ -32,7 +32,7 @@ console.log(row)
         document.getElementById('isbn').value='';
     }
 
-// create and display alert
+// create and display error alert
     UI.prototype.showAlert = function(message, className){
         //create div
         const div= document.createElement('div');
@@ -75,6 +75,8 @@ function(e){
         ui.showAlert('Please show all fields', 'error');
     }else{
 
+        //success
+        UI.showAlert('Book Added!', 'success')
     //add book to list
     ui.addBookToList(book);
     
