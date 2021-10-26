@@ -35,6 +35,12 @@ console.log(row)
 // create and display alert
     UI.prototype.showAlert = function(message, className){
         //create div
+        const div= document.createElement('div');
+
+        //add classes
+        div.classname = `alert ${className}`;
+        //add text
+        div.appendChild(document.createTextNode(message));
     }
 
 
