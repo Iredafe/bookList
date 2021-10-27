@@ -11,6 +11,9 @@ function UI(){
 
 }
 
+  //instantiate ui
+  const ui = new UI();
+
 UI.prototype.addBookToList = function(book){
    const list = document.getElementById('book-list');
    //create tr element
@@ -22,14 +25,14 @@ row.innerHTML = `<td> ${book.title} </td>
                 <td> ${book.title} </td>
                 <td> <a href="#" class="delete">X<a></td>`;
                 list.appendChild(row);
-console.log(row)
             }
 
 //delete
-UI.prototype.removeBookFromList = function(e){
-    console.log(e.target.parentElement.row.contains('delete'))
-    if(e.target.parentElement.row.contains('delete')){
-        e.target.parentElement.remove();
+UI.prototype.removeBookFromList=function(target){
+ 
+    if(target.className=='delete'){
+        target.parentElement.parentElement.remove();
+        console.log(target)
         
     }
 
@@ -74,9 +77,6 @@ function(e){
     //instantiate book
     const book = new Book(title,author, isbn);
 
-    //instantiate ui
-    const ui = new UI();
-
     //validate
     if(title==='' || author ==='' || isbn===''){
         ui.showAlert('Please show all fields', 'error');
@@ -94,4 +94,10 @@ function(e){
 });
 
 //event listener for delete
-document.getElementById('book-list')
+document.getElementById('book-list').addEventListener(
+    'click', function(e){
+       ui.removeBookFromList(e.target);
+       ui.showAlert('Book Removed!', 'success');
+       e.preventDefault();
+    }
+)
