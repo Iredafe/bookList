@@ -25,6 +25,16 @@ row.innerHTML = `<td> ${book.title} </td>
 console.log(row)
             }
 
+//delete
+UI.prototype.removeBookFromList = function(e){
+    console.log(e.target.parentElement.row.contains('delete'))
+    if(e.target.parentElement.row.contains('delete')){
+        e.target.parentElement.remove();
+        
+    }
+
+}
+
     //clear fields
     UI.prototype.clearFields= function(){
         document.getElementById('title').value='';
@@ -83,3 +93,5 @@ function(e){
     e.preventDefault();
 });
 
+//event listener for delete
+document.getElementById('book-list')
