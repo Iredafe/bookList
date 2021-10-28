@@ -54,3 +54,30 @@ setTimeout(function(){
         document.getElementById('isbn').value='';
     }
 }
+
+
+//event listeners
+document.getElementById('book-form').addEventListener('submit', 
+function(e){
+//get form values
+    const title = document.getElementById('title').value,
+    author =document.getElementById('author').value,
+    isbn=document.getElementById('isbn').value;
+    //instantiate book
+    const book = new Book(title,author, isbn);
+
+    //validate
+    if(title==='' || author ==='' || isbn===''){
+        ui.showAlert('Please show all fields', 'error');
+    }else{
+
+        //success
+    ui.showAlert('Book Added!', 'success')
+    //add book to list
+    ui.addBookToList(book);
+    
+   //clear fields
+   ui.clearFields();
+    }
+    e.preventDefault();
+});
