@@ -32,7 +32,6 @@ UI.prototype.removeBookFromList=function(target){
  
     if(target.className=='delete'){
         target.parentElement.parentElement.remove();
-        console.log(target)
         
     }
 
