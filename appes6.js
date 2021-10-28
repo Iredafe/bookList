@@ -34,8 +34,9 @@ setTimeout(function(){
     }
 
     removeBookFromList(target){
-
-
+        if(target.className=='delete'){
+            target.parentElement.parentElement.remove();   
+        }
     }
 
     clearFields(){
