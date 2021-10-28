@@ -8,20 +8,20 @@ class Book{
 }
 
 class UI{
-    addBookToList(){
+    addBookToList(book){
 
     }
 
-    showAlert(){
+    showAlert(message, className){
 
     }
 
-    removeBookFromList(){
+    removeBookFromList(target){
 
 
     }
 
     clearFields(){
-        
+
     }
 }
