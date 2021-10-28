@@ -11,4 +11,17 @@ class UI{
     addBookToList(){
 
     }
+
+    showAlert(){
+
+    }
+
+    removeBookFromList(){
+
+
+    }
+
+    clearFields(){
+        
+    }
 }
