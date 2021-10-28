@@ -1,12 +1,12 @@
 class Book{
 
-    constructor (author, title, isbn){
+    constructor(title,author, isbn){
         author = this.author;
         title=this.title;
         isbn=this.isbn;
     }
 }
-
+  
 class UI{
     addBookToList(book){
         const list = document.getElementById('book-list');
@@ -21,6 +21,7 @@ class UI{
                      list.appendChild(row);
     }
 
+    
     showAlert(message, className){
 //create div
 const div= document.createElement('div');
@@ -42,6 +43,7 @@ setTimeout(function(){
 );
     }
 
+
     removeBookFromList(target){
         if(target.className=='delete'){
             target.parentElement.parentElement.remove();   
@@ -55,7 +57,6 @@ setTimeout(function(){
     }
 }
 
-
 //event listeners
 document.getElementById('book-form').addEventListener('submit', 
 function(e){
@@ -66,6 +67,10 @@ function(e){
     //instantiate book
     const book = new Book(title,author, isbn);
 
+      // Instantiate UI
+      const ui = new UI();
+   
+      console.log(ui)
     //validate
     if(title==='' || author ==='' || isbn===''){
         ui.showAlert('Please show all fields', 'error');
@@ -81,3 +86,15 @@ function(e){
     }
     e.preventDefault();
 });
+
+
+//event listener for delete
+document.getElementById('book-list').addEventListener(
+    'click', function(e){
+          // Instantiate UI
+  const ui = new UI();
+       ui.removeBookFromList(e.target);
+       ui.showAlert('Book Removed!', 'success');
+       e.preventDefault();
+    }
+)
