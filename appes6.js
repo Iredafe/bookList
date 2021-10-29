@@ -56,6 +56,17 @@ setTimeout(function(){
     }
 }
 
+//Local Storage Class
+class Store{
+    displayBooks(){
+
+    }
+
+    addBook(){
+        
+    }
+}
+
 //event listeners
 document.getElementById('book-form').addEventListener('submit', 
 function(e){
