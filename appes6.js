@@ -58,13 +58,23 @@ setTimeout(function(){
 
 //Local Storage Class
 class Store{
+    
+    getBooks(){
+        
+    }
+    
     displayBooks(){
 
     }
 
     addBook(){
-        
+
     }
+
+    removeBook(){
+
+    }
+
 }
 
 //event listeners
