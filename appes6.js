@@ -68,7 +68,10 @@ class Store{
     }
 
     static addBook(){
-
+        let books;
+        if(localStorage.getItem('books')===null){
+            books = [];
+        }
     }
 
     static removeBook(){
@@ -101,6 +104,9 @@ function(e){
     //add book to list
     ui.addBookToList(book);
     
+    //add to local storage
+    Store.addBook(book);
+
    //clear fields
    ui.clearFields();
     }
