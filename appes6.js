@@ -59,19 +59,19 @@ setTimeout(function(){
 //Local Storage Class
 class Store{
     
-    getBooks(){
-        
+    static getBooks(){
+
     }
     
-    displayBooks(){
+    static displayBooks(){
 
     }
 
-    addBook(){
+    static addBook(){
 
     }
 
-    removeBook(){
+    static removeBook(){
 
     }
 
