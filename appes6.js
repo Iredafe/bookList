@@ -56,6 +56,8 @@ setTimeout(function(){
     }
 }
 
+//DOM load event
+document.addEventListener('DOMContentLoaded', Store.displayBooks);
 //Local Storage Class
 class Store{
     
