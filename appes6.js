@@ -56,8 +56,6 @@ setTimeout(function(){
     }
 }
 
-//DOM load event
-document.addEventListener('DOMContentLoaded', Store.displayBooks);
 //Local Storage Class
 class Store{
     
@@ -72,7 +70,7 @@ class Store{
     }
     
     static displayBooks(){
-        const book = Store.getBooks();
+        const books = Store.getBooks();
         books.forEach(function(book){
             const ui = new UI();
             //add book to ui
@@ -94,6 +92,9 @@ class Store{
 
 }
 
+
+//DOM load event
+document.addEventListener('DOMContentLoaded', Store.displayBooks);
 //event listeners
 document.getElementById('book-form').addEventListener('submit', 
 function(e){
