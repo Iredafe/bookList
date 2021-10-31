@@ -66,14 +66,19 @@ class Store{
         }else{
             books = JSON.parse(localStorage.getItem('books'))
         }
+        return books
     }
     
     static displayBooks(){
-
+        
     }
 
     static addBook(){
-        
+        const books = Store.getBooks();
+
+        books.push(book);
+
+        localStorage.setItem('books', JSON.stringify(books));
     }
 
     static removeBook(){
