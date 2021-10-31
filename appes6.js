@@ -73,7 +73,7 @@ class Store{
         
     }
 
-    static addBook(){
+    static addBook(book){
         const books = Store.getBooks();
 
         books.push(book);
