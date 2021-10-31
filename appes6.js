@@ -86,8 +86,12 @@ class Store{
         localStorage.setItem('books', JSON.stringify(books));
     }
 
-    static removeBook(){
-
+    static removeBook(isbn, index){
+        const books = Store.getBooks()
+        if(books.isbn === isbn){
+    
+            books.splice(isbn, index)
+        }
     }
 
 }
@@ -135,6 +139,9 @@ document.getElementById('book-list').addEventListener(
           // Instantiate UI
   const ui = new UI();
        ui.removeBookFromList(e.target);
+
+       //remove from local storage
+       Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
        ui.showAlert('Book Removed!', 'success');
        e.preventDefault();
     }
